@@ -83,7 +83,7 @@ score_D <- sapply(X = 1:N, FUN = function(c) {train_data[c,]%*%safelog(pcd[,4])+
 score_E <- sapply(X = 1:N, FUN = function(c) {train_data[c,]%*%safelog(pcd[,5])+(1-train_data[c,])%*%safelog(1-pcd[,5])+safelog(priors[5])})
 score_all <- rbind(score_A, score_B, score_C, score_D, score_E)
 
-y_pred <- sapply(X=1:N, FUN = function(c) {match(max(score_func[,c]),score_all)})
+y_pred <- sapply(X=1:N, FUN = function(c) {match(max(score_all[,c]),score_all)})
 y_pred <- (y_pred - 1) %% K + 1
 
 conf_A <- sapply(X=1:K, FUN=function(c) {sum(!is.na(match(y_pred[1:25],c)))})
@@ -106,7 +106,7 @@ score_D_test <- sapply(X = 1:N, FUN = function(c) {test_data[c,]%*%safelog(pcd[,
 score_E_test <- sapply(X = 1:N, FUN = function(c) {test_data[c,]%*%safelog(pcd[,5])+(1-test_data[c,])%*%safelog(1-pcd[,5])+safelog(priors[5])})
 score_all_test <- rbind(score_A_test, score_B_test, score_C_test, score_D_test, score_E_test)
 
-y_pred_test <- sapply(X=1:N, FUN = function(c) {match(max(score_all_test[,c]),score_func_test)})
+y_pred_test <- sapply(X=1:N, FUN = function(c) {match(max(score_all_test[,c]),score_all_test)})
 y_pred_test <- (y_pred_test - 1) %% K + 1
 
 conf_A_test <- sapply(X=1:K, FUN=function(c) {sum(!is.na(match(y_pred_test[1:14],c)))})
