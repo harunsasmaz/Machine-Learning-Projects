@@ -9,16 +9,23 @@ Koc University ENGR 421 Fall 2020 Course Projects
 #### Environment
 
 > Python 3.7
+
 > PIP
+
 > Jupyter Notebook
+
 > R
+
 > RStudio (Preferably)
 
 #### Libraries
 
 > NumPy
+
 > Pandas
+
 > matplotlib
+
 > scikit-learn
 
 > MASS (for R)
@@ -37,6 +44,8 @@ Then, run cells one by one.
 For R
 
 > Open RStudio
+
 > Set working directory
+
 > Run source code
 
